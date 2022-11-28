@@ -49,9 +49,14 @@ namespace Entrainement1.Modeles
                 // on va commencer par faire un foreach pour parcourir les ventes des consommateurs donc consoFidele.LesVentes
                 // pour savoir si c'est une vente ecommerce dans le type on va pouvoir mettre VenteEcommerce car il y a un héritage
                 //puis on ajoutera le montant de cette vente dans le totalEcom avec vente.montant
-
-
-
+                foreach(VenteEcommerce uneVente in consoFidele.LesVentes)
+                {
+                    totamEcom += uneVente.montant;
+                }
+                foreach(VenteMagasin uneVente in consoFidele.LesVentes)
+                {
+                    totalMag += uneVente.montant;   
+                }
             }
             return totalMag / totalEcom; //renvoie le montant des ventes en magasin sur le montant des ventes en ligne
         }
